@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}
+
+{% block redirect %}
+    {% if redirect_url %}
+    <script>
+        window.location.href = '{{ order_confirmation }}';
+    </script>
+    {% endif %}
+{% endblock %}

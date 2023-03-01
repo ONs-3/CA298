@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+  // displays the header for the order confirmation page
+  <h1>Order Confirmation</h1> 
+  <p>Your order is complete. Thank you for choosing Piece a' Pizza!</p>
+  //Here we display the user's pizza order
+  <h2>Your Pizza:</h2> 
+  <p><strong>Size:</strong> {{ order.size }}</p>
+  <p><strong>Crust:</strong> {{ order.crust }}</p> 
+  <p><strong>Sauce:</strong> {{ order.sauce }}</p>
+  <p><strong>Cheese:</strong> {{ order.cheese }}</p>
+  <p><strong>Toppings:</strong> {{ order.toppings }}</p>
+</div>
+<div>
+    //Here we are showing the user's delivery details
+  <h2>Delivery Details:</h2>  
+  <p><strong>Name:</strong> {{ order.name }}</p>  
+  <p><strong>Address:</strong> {{ order.address }}</p>  
+  <p><strong>Card Number:</strong> {{ order.card_number }}</p>  
+  <p><strong>Card Expiry:</strong> {{ order.card_expiry }}</p>  
+  <p><strong>CVV:</strong> {{ order.card_cvv }}</p> 
+</div>
+{% endblock %}

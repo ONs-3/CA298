@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <form method="post">
+    {% csrf_token %}
+    <label>Size:</label>
+    <select name="size">
+      {% for size, label in sizes %}
+        <option value="{{ size }}">{{ label }}</option>
+      {% endfor %}
+    </select><br>
+
+    <label>Crust:</label>
+    <select name="crust">
+      {% for crust, label in crusts %}
+        <option value="{{ crust }}">{{ label }}</option>
+      {% endfor %}
+    </select><br>
+
+    <label>Sauce:</label>
+    <select name="sauce">
+      {% for sauce, label in sauces %}
+        <option value="{{ sauce }}">{{ label }}</option>
+      {% endfor %}
+    </select><br>
+
+    <label>Cheese:</label>
+    <select name="cheese">
+      {% for cheese, label in cheeses %}
+        <option value="{{ cheese }}">{{ label }}</option>
+      {% endfor %}
+    </select><br>
+
+    <label>Toppings:</label>
+    {% for toppings, label in toppings %}
+      <input type="checkbox" name="toppings" value="{{ toppings }}">{{ label }}<br>
+    {% endfor %}
+
+    <input type="submit" value="Order">
+  </form>
+{% endblock %}
